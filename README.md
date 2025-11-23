@@ -55,3 +55,58 @@ The project uses six CSV files, but focuses on specific columns to answer the te
 ## 🧾 DECISION TABLE — DATA QUALITY & CLEANING STRATEGY
 
 📎 **Visual Reference:** ![Decision Table](https://github.com/OluwafunmilayoB12/Project/blob/main/DecisionTable.png)
+
+---
+
+## DATA CLEANING – 4-PHASE PROCESS
+
+**Phase 1 – Date Standardization**  
+Mixed text formats in `line_item_usage_start_date` were unified using `TRY_CAST(line_item_usage_start_date AS Date)`.
+
+**Phase 2 – Numeric Corrections**  
+`line_item_blended_cost` contained text and negatives. We cast to FLOAT and applied `ABS()`.
+
+**Phase 3 – Text Standardization**  
+Team names and environments were upper-cased and trimmed to ensure consistent joins
+
+**Phase 4 – Logical Integrity**  
+Removed null CPU values and flagged resources active after decommission dates (“zombie” servers)
+
+---
+
+## HYPOTHESIS EXPLORATION
+
+Before analysis, the following are tested hypotheses:
+
+1. **Servers are overloaded → False** – no overloaded servers in the environment
+2.  **Most legacy servers are underutilized → True** – Indicating technical debt
+3. **Majority of teams are still running on legacy server → True** – The five teams contributed to the modernization debt 
+
+Applied the **BAIIR** Framework (*Baseline, Analysis, Insight, Impact, Recommendation*) document the analysis for clarity.
+
+---
+
+## ANALYSIS
+
+### Queries Used
+```sql
+-- Baseline trend
+
+Resources vulnerability rate
+  No of resources with at least 1 vulnerabilty / Actual server  *100
+
+  WITH total_resource AS(
+		SELECT COUNT(DISTINCT resource_id) AS Actual_server
+		FROM resource_configuration
+		WHERE Modernization_status IN ('Legacy', 'Modern')
+),
+    vulnerable_resources AS(
+		SELECT COUNT(DISTINCT resource_id) AS vulnerable_resources
+		FROM security_findings_cleaned
+)
+	SELECT vr.vulnerable_resources, tr.Actual_server,
+			(vr.vulnerable_resources * 100.0 / tr.Actual_server) as vulnerability_rate
+	FROM total_resource tr
+	CROSS JOIN vulnerable_resources vr;
+
+
