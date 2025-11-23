@@ -6,7 +6,7 @@
 ## CONTEXT AND PROBLEM
 
 TechNova Software Inc. is a fast-growing SaaS company based in Nairobi, Kenya.  
-Recently, leadership noticed that **the technical debt of 33% was accumulated during the period of growth at all cost between July and August 2025, engineering leadership was facing significant **operational friction**.
+Recently, leadership noticed that **the technical debt of 33% was accumulated during the period of growth at all cost** between July and August 2025, engineering leadership was facing significant **operational friction**.
 
 ### Problem Statement
  TechNova is experiencing significant operational friction and accumulated technical debt that built up during the "growth-at-all-cost" phase, this affects the CTO & Engineering Managers by increasing the platform inefficiency and stability.
@@ -49,3 +49,9 @@ The project uses six CSV files, but focuses on specific columns to answer the te
 | **performance_metrics** | CPU utilization data | `resource_id`, `average_value`, `metric_date` |
 | **security_findings_cleaned** | Lists security vulnerabilities | `resource_id`, `severity` |
 | **resource_configuration** | Instance types & decommission dates | `resource_id`, `instance_type`, `decommission_date` |
+
+---
+
+## 🧾 DECISION TABLE — DATA QUALITY & CLEANING STRATEGY
+
+📎 **Visual Reference:**
