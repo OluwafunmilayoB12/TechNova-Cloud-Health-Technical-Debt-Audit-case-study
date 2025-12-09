@@ -33,7 +33,7 @@ Recently, leadership noticed that **the technical debt of 33% was accumulated du
 | Healthy server | 11,464 | Healthy servers *ranged from 2-39 between June 30 and Aug 27,spiked to 494 on Aug 28*, then stabilized at 10,343 on Aug 29|
 | Idle server | 2,166 | *idle servers jumped from 0-6 (Jun 30- Aug 27)* to **2,061 in two days (Aug 28-29)** generating unnecessary cost and resource inefficiency |
 | Actual server | 13,698 | Out of 13,698 servers, 9,142 are modern and 4,556 are older. Most of the server is fine but the older servers lead to business risks  |
-| Modernization Debt | 33% | *One-third of the servers* are still running on outdated technology, increasing technical debt |
+| Modernization Debt | 33% | *One-third of the servers* are still running on outdated technology, increasing technical debt across all teams |
 | Legacy server | 4,556 | 33% of servers that are outdated causing inefficiency |
 | Modern server | 9,142 | 67% of updated server supporting better performance |
 
