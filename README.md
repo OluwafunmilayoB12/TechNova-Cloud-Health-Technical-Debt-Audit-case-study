@@ -2,6 +2,19 @@
 *A Data-Driven Investigation into Cloud resources security vulnerabilities, server utilization and modernization debt metrics*
 
 ---
+## TABLE OF CONTENT
+- [CONTEXT AND PROBLEM](#CONTEXT-AND-PROBLEM) 
+- [DATASET METADATA](#DATASET-METADATA) 
+- [DATA QUALITY AND CLEANING STRATEGY](#DECISION-TABLE-DATA-QUALITY-&-CLEANING-STRATEGY) 
+- [HYPOTHESIS EXPLORATION](#HYPOTHESIS-EXPLORATION) 
+- [BUSINESS IMPACT](#BUSINESS-IMPACT) 
+- [ANALYSIS](#ANALYSIS) 
+- [RESULTS AND VISUALS](#RESULTS-AND-VISUALS) 
+- [INSIGHT](#ROOT-CAUSE-INSIGHTS) 
+- [RECOMMENDATION](#RECOMMENDATION]) 
+- [WHY THE FIX WILL WORK](#WHY-THE-FIX-WILL-WORK)
+
+---
 
 ## CONTEXT AND PROBLEM
 
@@ -20,22 +33,6 @@ Recently, leadership noticed that **the technical debt of 33% was accumulated du
 | **CTO** | Oversees platform reliability and technical efficiency |
 | **Engineering Managers** | coordinate teams to prioritize fixes  |
 | **Data Analyst (You)** | Diagnose causes, quantify risks, communicate insights |
-
----
-
-## BUSINESS IMPACT
-
-| Metric | Value | Interpretation |
-|---------|--------|----------------|
-| Resource Vulnerability Rate  | 25% | *Increased from a baseline of 15% to 25%*, showing **10% increase** in exposed resources to security risk |
-| Critical Vulnerability Count | 704| High number of severe vulnerabilities that require urgent fix  |
-| Total vulnerability | 3,416 | security vulnerabilities across the cloud environment needed to be fixed|
-| Healthy server | 11,464 | Healthy servers *ranged from 2-39 between June 30 and Aug 27,spiked to 494 on Aug 28*, then stabilized at 10,343 on Aug 29|
-| Idle server | 2,166 | *idle servers jumped from 0-6 (Jun 30- Aug 27)* to **2,061 in two days (Aug 28-29)** generating unnecessary cost and resource inefficiency |
-| Actual server | 13,698 | Out of 13,698 servers, 9,142 are modern and 4,556 are older. Most of the server is fine but the older servers lead to business risks  |
-| Modernization Debt | 33% | *One-third of the servers* are still running on outdated technology, increasing technical debt across all teams |
-| Legacy server | 4,556 | 33% of servers that are outdated causing inefficiency |
-| Modern server | 9,142 | 67% of updated server supporting better performance |
 
 ---
 
@@ -58,7 +55,7 @@ The project uses six CSV files, but focuses on specific columns to answer the te
 
 ---
 
-## DATA CLEANING – 4-PHASE PROCESS
+### DATA CLEANING – 4-PHASE PROCESS
 
 **Phase 1 – Date Standardization**  
 Mixed text formats in `line_item_usage_start_date` were unified using `TRY_CAST(line_item_usage_start_date AS Date)`.
@@ -83,6 +80,22 @@ Before analysis, the following are tested hypotheses:
 3. **Majority of teams are still running on legacy server → True** – The five teams contributed to the modernization debt 
 
 Applied the **BAIIR** Framework (*Baseline, Analysis, Insight, Impact, Recommendation*) to document the analysis for clarity.
+
+---
+
+## BUSINESS IMPACT
+
+| Metric | Value | Interpretation |
+|---------|--------|----------------|
+| Resource Vulnerability Rate  | 25% | *Increased from a baseline of 15% to 25%*, showing **10% increase** in exposed resources to security risk |
+| Critical Vulnerability Count | 704| High number of severe vulnerabilities that require urgent fix  |
+| Total vulnerability | 3,416 | security vulnerabilities across the cloud environment needed to be fixed|
+| Healthy server | 11,464 | Healthy servers *ranged from 2-39 between June 30 and Aug 27,spiked to 494 on Aug 28*, then stabilized at 10,343 on Aug 29|
+| Idle server | 2,166 | *idle servers jumped from 0-6 (Jun 30- Aug 27)* to **2,061 in two days (Aug 28-29)** generating unnecessary cost and resource inefficiency |
+| Actual server | 13,698 | Out of 13,698 servers, 9,142 are modern and 4,556 are older. Most of the server is fine but the older servers lead to business risks  |
+| Modernization Debt | 33% | *One-third of the servers* are still running on outdated technology, increasing technical debt across all teams |
+| Legacy server | 4,556 | 33% of servers that are outdated causing inefficiency |
+| Modern server | 9,142 | 67% of updated server supporting better performance |
 
 ---
 
@@ -117,10 +130,10 @@ Resources vulnerability rate
 ### VISUAL 1 - Cloud Vulnerability Overview
 ![Visual 1](https://github.com/OluwafunmilayoB12/Project/blob/main/Visual%201.png)
 
-### VISUAL 2 Performance
+### VISUAL 2 Root Cause Analysis
 ![Visual 2](https://github.com/OluwafunmilayoB12/Project/blob/main/Visual%202.png)
 
-### VISUAL 3 - Io Fix and Recommendation
+### VISUAL 3 - To Fix and Recommendation
 ![Visual 3](https://github.com/OluwafunmilayoB12/Project/blob/main/Visual%203.png)
 
 ---
@@ -149,13 +162,13 @@ critical vulnerabilities are widespread across the teams, not just a team.
 
 - **Reducing vulnerability rate of 15% to <5%**
 20% of Actual server = 2,739 , 90% of risk come from Critical + High vulnerability.
-- Critical + High vulnerabities = 2,394(70%).
+  Critical + High vulnerabities = 2,394(70%).
 
-- Fixing it will reduce the resource vulnerability rate massively.
+  Fixing it will reduce the resource vulnerability rate massively.
 
-- **Reducing total vulnerability 3,416 by 60%**
-Fixing the Critical and High vul will achieve:
-- 70% reduction
-- below the target   1366 (3416 * 60%).
+- **Reducing total vul 3,416 by 60%**
+Fixing the Critical aCriticalvandwill achieve:
+1. 70% reduction
+2. below the target   1366 (3416 * 60%).
 - **Automation** prevents recurrence.
 - **Immediate terminations** will drive 5–8 % instant savings. 
