@@ -5,13 +5,13 @@
 ## TABLE OF CONTENT
 - [CONTEXT AND PROBLEM](#CONTEXT-AND-PROBLEM) 
 - [DATASET METADATA](#DATASET-METADATA) 
-- [DATA QUALITY AND CLEANING STRATEGY](#DECISION-TABLE-DATA-QUALITY-&-CLEANING-STRATEGY) 
+- [DATA QUALITY AND CLEANING STRATEGY](#DATA-QUALITY-AND-CLEANING-STRATEGY) 
 - [HYPOTHESIS EXPLORATION](#HYPOTHESIS-EXPLORATION) 
 - [BUSINESS IMPACT](#BUSINESS-IMPACT) 
 - [ANALYSIS](#ANALYSIS) 
 - [RESULTS AND VISUALS](#RESULTS-AND-VISUALS) 
 - [INSIGHT](#ROOT-CAUSE-INSIGHTS) 
-- [RECOMMENDATION](#RECOMMENDATION]) 
+- [RECOMMENDATION](#RECOMMENDATION) 
 - [WHY THE FIX WILL WORK](#WHY-THE-FIX-WILL-WORK)
 
 ---
@@ -19,10 +19,10 @@
 ## CONTEXT AND PROBLEM
 
 TechNova Software Inc. is a fast-growing SaaS company based in Nairobi, Kenya.  
-Recently, leadership noticed that **the technical debt of 33% was accumulated during the period of growth at all cost** between July and August 2025, engineering leadership was facing significant **operational friction**.
+Recently, leadership noticed that **the technical debt of 33% was accumulated during the growth-at-all-costs period** between July and August 2025, engineering leadership was facing significant **operational friction**.
 
 ### Problem Statement
- TechNova is experiencing significant operational friction and accumulated technical debt that built up during the "growth-at-all-cost" phase, this affects the CTO & Engineering Managers by increasing the platform inefficiency and stability.
+ TechNova is experiencing significant operational friction and accumulated technical debt that built up during the growth-at-all-cost phase, this affects the CTO & Engineering Managers by increasing the platform inefficiency and stability.
  We need to run Root Cause Analysis & trend analysis to perform a full audit of all cloud resources,
  to identify and reduce technical debt and critical vulnerabilities, aiming to lower the percentage of affected resources to below 5% and decrease the total vulnerability count by at least 60% after remediation.
 
@@ -37,7 +37,7 @@ Recently, leadership noticed that **the technical debt of 33% was accumulated du
 ---
 
 ## Dataset Metadata
-The project uses six CSV files, but focuses on specific columns to answer the technical questions.
+The project uses six CSV files but focuses on specific columns to answer the technical questions.
 
 | Table | Description | Key Columns |
 |--------|--------------|-------------|
@@ -64,7 +64,7 @@ Mixed text formats in `line_item_usage_start_date` were unified using `TRY_CAST(
 `line_item_blended_cost` contained text and negatives. We cast to FLOAT and applied `ABS()`.
 
 **Phase 3 – Text Standardization**  
-Team names and environments were upper-cased and trimmed to ensure consistent joins
+Team names and environments were uppercased and trimmed to ensure consistent joins
 
 **Phase 4 – Logical Integrity**  
 Removed null CPU values and flagged resources active after decommission dates (“zombie” servers)
@@ -88,11 +88,11 @@ Applied the **BAIIR** Framework (*Baseline, Analysis, Insight, Impact, Recommend
 | Metric | Value | Interpretation |
 |---------|--------|----------------|
 | Resource Vulnerability Rate  | 25% | *Increased from a baseline of 15% to 25%*, showing **10% increase** in exposed resources to security risk |
-| Total vulnerability | 3,416 | Overall security vulnerabilities across the cloud environment needed to be fixed, including **Medium 29.9%**, **High 49.5%** and **Critical vulnerability 20.6%**|
+| Total vulnerabilities | 3,416 | Overall security vulnerabilities across the cloud environment needed to be fixed, including **Medium 29.9%**, **High 49.5%** and **Critical vulnerabilities 20.6%**|
 | Critical Vulnerability Count | 704| Critical vulnerabilities account for 20.6% (one-fifth) of all security vulnerabilities, representing a high-risk exposure that could compromise system stability and security if not quickly resolved|
-| Healthy server | 11,464 | Healthy servers ranged from **2-39** between June 30 and Aug 27,spiked to **494** on Aug 28, then stabilized at **10,343** on Aug 29|
-| Idle server | 2,166 | idle servers stayed between **0-6** (Jun 30- Aug 27) then jumped to **2,061 within two days (Aug 28-29)** generating unnecessary cost and resource inefficiency |
-| Actual server | 13,698 | Out of 13,698 servers, **9,142 are modern** and **4,556 are older**. Most of the server is fine but the older servers lead to business risks  |
+| Healthy servers | 11,464 | Healthy servers ranged from **2-39** between June 30 and Aug 27,spiked to **494** on Aug 28, then stabilized at **10,343** on Aug 29|
+| Idle servers | 2,166 | idle servers stayed between **0-6** (Jun 30- Aug 27) then jumped to **2,061 within two days (Aug 28-29)** generating unnecessary cost and resource inefficiency |
+| Actual servers | 13,698 | Out of 13,698 servers, **9,142 are modern** and **4,556 are older**. Most of the server are operational but the older servers lead to business risks  |
 | Modernization Debt | 33% | **One-third of the servers** are still running on outdated technology, increasing technical debt across all teams |
 | Legacy server | 4,556 | 33% of servers that are outdated causing inefficiency |
 | Modern server | 9,142 | 67% of updated server supporting better performance |
@@ -142,16 +142,16 @@ Resources vulnerability rate
 
 - High vulnerability rate is due to risk constituted in *Critical* and *High* level of severity.
 - Payment (150) and User-frontend teams (146) have the highest critical vulnerabilities.
-critical vulnerabilities are widespread across the teams, not just a team.
+Critical vulnerabilities are widespread across the teams, not just a team.
 - **2,166 Idle servers** <5% cpu increase server count with no business value and leads to paying for unused resources.
-- legacy server dependency representing a major contributor to modernization debt and operational risk.   
+- Legacy server dependency representing a major contributor to modernization debt and operational risk.   
 - **477 zombie server** still running and incurring cost after decommission date.
 
 ---
 
 ## RECOMMENDATIONS
 * Cloud Operation Lead should immediately terminate 477 zombie servers to reduce the cloud waste by 5-8%.
-* CFO & CLoud Operation Lead should implement auto-shutdown and remove 2,166 idle servers.
+* CFO & Cloud Operation Lead should implement auto-shutdown and remove 2,166 idle servers.
 * Platform Engineering Team should modernize the 4,556 legacy servers to lower modernization debt from 33%.
 * Security Engineering Team should prioritize fixing 2,394 Critical and High vulnerabilities to reduce the vulnerability rate below 5%.
 * Engineering Managers (All Teams) should take responsibility for resources tagged to their team.
@@ -167,7 +167,7 @@ critical vulnerabilities are widespread across the teams, not just a team.
   Fixing it will reduce the resource vulnerability rate massively.
 
 - **Reducing total vul 3,416 by 60%**
-Fixing the Critical aCriticalvandwill achieve:
+Fixing the Critical and High vulnerabilities will achieve:
 1. 70% reduction
 2. below the target   1366 (3416 * 60%).
 - **Automation** prevents recurrence.
