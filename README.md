@@ -137,6 +137,8 @@ Resources vulnerability rate
 ![Visual 3](https://github.com/OluwafunmilayoB12/Project/blob/main/Visual%203.png)
 
 ---
+To explore the full insights interactively, access the dashboard here:
+https://app.powerbi.com/view?r=eyJrIjoiMmJmNmM5NGItYzFiNC00YmIwLWE5NmYtOWFlYWU2N2RhOTQzIiwidCI6Ijk3MGQ2YjAxLTQxYzUtNDYwYS05NTFkLTc4NTJlODJiODU2ZCJ9
 
 ### ROOT CAUSE INSIGHTS
 
