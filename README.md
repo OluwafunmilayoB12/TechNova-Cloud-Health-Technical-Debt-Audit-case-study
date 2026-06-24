@@ -2,6 +2,8 @@
 *A Data-Driven Investigation into Cloud resources security vulnerabilities, server utilization and modernization debt metrics*
 
 ---
+> Growing fast is easy. Knowing what it cost you takes an audit.
+---
 ## TABLE OF CONTENT
 - [CONTEXT AND PROBLEM](#CONTEXT-AND-PROBLEM) 
 - [DATASET METADATA](#DATASET-METADATA) 
