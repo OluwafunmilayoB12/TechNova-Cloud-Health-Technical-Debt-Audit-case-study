@@ -32,7 +32,7 @@ Recently, leadership noticed that **the technical debt of 33% was accumulated du
 |------|----------------|
 | **CTO** | Oversees platform reliability and technical efficiency |
 | **Engineering Managers** | coordinate teams to prioritize fixes  |
-| **Data Analyst (You)** | Diagnose causes, quantify risks, communicate insights |
+| **Data Analyst** | Diagnose causes, quantify risks, communicate insights |
 
 ---
 
